@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:find": "node comandos/find.js",
     "start": "node tasks.js"
   },
   "keywords": [],
