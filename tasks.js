@@ -2,6 +2,7 @@ const find = require ('./comandos/find.js');
 const list = require ('./comandos/list.js');
 const filter = require('./comandos/filter.js');
 const retorno = require('./comandos/return.js');
+const edit = require ('./comandos/edit.js');
 
 const action = process.argv [2];
 
@@ -56,10 +57,32 @@ switch (action) {
         break;
     }
 
-    default: {
-        console.log ('Esa accion no esta definida');
+    case'edit': {
+        const title = process.argv [3];
+        const nuevaDesc = process.argv [4];
+        
+        if(!title) {
+            console.log ('No se ha ingresado ningun titulo');
+            break;
+        }
+        if(!nuevaDesc) {
+            console.log ('No se ha ingresado ninguna descripcion nueva');
+            break;
+        }
+        
+        console.log (edit(title,nuevaDesc));
         break;
-    };
+    }
 
-}
+    default: {
+        console.log ('No se ha ingresado ninguna tarea');
+        break;
+    }
+
+    }
+
+
+    
+
+
 
